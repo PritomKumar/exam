@@ -1,3 +1,5 @@
+
+console.log("First answer ----");
 let array = [4,5,1,2,6,8,9,7,3];
 
 let largest = 0;
@@ -34,17 +36,22 @@ for (let i=0 ; i< array.length ; i++){
 
 console.log( "Second lowest = " + secondLowest );
 
+console.log("Second answer ----");
 let array1 = [4,5,1,2,6,8,9,7,3,24,24,17,19,19,24];
+let visited = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 let countnumber=0;
 
 for(let i=0 ;i<array1.length ; i++){
     let num = array1[i];
+    if(visited[i]== 1){
+        continue;
+    }
     for(let j=0 ;j<array1.length ; j++){
-        if(array1[i]==array1[j] && array1[i]!=-1){
+        if(array1[i]==array1[j] && visited[j]!= 1){
             
             countnumber++;
-            array1[j] = -1;
+            visited[j] = 1;
             
         }
     }
